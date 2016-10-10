@@ -4,23 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
     <title>Mauro Sabatino – Presentazione Tesi Triennale Informatica</title>
-
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/white.css">
     <link rel="stylesheet" href="css/custom.css">
-
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
-
     <!-- Printing and PDF exports -->
     <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
     </script>
 </head>
 
@@ -30,10 +27,12 @@
         <div class="slides">
             <section data-state="header" style="top:5px;">
                 <style class="">
-                    .header header:after
+                .header header:after
                 </style>
                 <h1>DBAlps</h1>
-                <p>Mappatura di processi di instabilità in settore alpino</p>
+                <div class="row">
+                    Mappatura di processi di instabilità in settore alpino
+                </div>
                 <p><strong>Relatore: </strong> Prof. Ruggero Pensa</p>
                 <p><strong>Tutor Aziendale: </strong>Guido Nigrelli</p>
                 <p><strong>Candidato: </strong> Mauro Sabatino</p>
@@ -44,56 +43,116 @@
                     Luogo dello stage
                 </section>
                 <section>
-                    <h2>CNR</h2>
-                    <p><small>Consiglio Nazionale delle Ricerche</small></p>
+                    <img src="asset/cnr.png" alt="..." class="img-responsive">
                     <!--La mia tesi tratta del lavoro che ho svolto durante il mio stage presso il cnr, l’ente nazionale di ricerca con competenze scientifiche generali. 
                     Questo svolge importanti attività di ricerca per l’avanzamento della scienza e del progresso del nostro paese, creando valore attraverso la conoscenza. 
                     Spesso collabora con università e aziende nazionali. È costituito da diversi istituti su tutto il territorio.-->
                 </section>
                 <section>
-                    <h2>IRPI</h2>
-                    <p><small>Istituto di Ricerca per la Protezione Idrogeologica</small></p>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <img src="asset/irpi.png" alt="..." class="img-responsive">
+                        </div>
+                    </div>
                     <!-- Uno degli istituiti del cnr è l’ irpi torino che ha diversi compiti tra cui: lo studio dei fenomeni d’instabilità naturale, l’analisi degli impatti dovuti ai cambiamenti climatici, documentare fenomenologie , sviluppare db.-->
                 </section>
                 <section>
-                    <h2>Geoclimalp</h2>
-                    <small>GEOmorphological impacts of CLIMate change in ALPs</small>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <img src="asset/geoclimalp.png" alt="..." class="img-responsive">
+                        </div>
+                    </div>
                     <!-- In particolare all’interno dell’ irpi è stato istituito un gruppo di ricerca, chiamato geoclimalp con il il quale ho collaborato, che studia le conseguenze dei cambiamenti climatici nella morfogenesi dell’ambiente alpino e di quelli in alta quota, con riferimento ai processi d’instabilità che ne derivano-->
                 </section>
             </section>
             <section>
                 <!--Capitolo 2 e 3 -->
                 <section>
-                    Cosa fa DBAlps
+                   DBALPS
                 </section>
                 <section>
                     Problema geologico
+                    <img src="asset/problema_geologico.jpg" class="stretch" alt="Image">
+                    <!-- Come spesso sentiamo nei servizi d’informazione sul nostro pianeta stanno avvenendo dei cambiamenti climatici che stanno portando a diverse conseguenze ambientali spesso con conseguenze negative.
+L’ambiente alpino sta reagendo a questi cambiamenti infatti ad esempio spesso sentiamo parlare dell’arretramento dei ghiacciai, ma sono anche presenti dei fenomeni d’instabilità naturale sempre in aumento.
+I processi d’instabilità naturale si intende manifestazioni naturali che vanno a modificare l’ambiente circostante come ad esempio frane o crolli.
+L’impatto di questi spesso coinvolge anche opere umane come: infrastrutture, rifugi , sentieri con crolli di roccia e detriti. 
+-->
                 </section>
-                <section>Screen dell'applicazione</section>
-                <section>Archittettura MVC</section>
+                <section>
+                    DBAlps
+                    <img src="asset/screen.png" class="stretch" alt="Image">
+                    <!-- Come detto prima geoclimapl studia questi fenomeni d’instabilità e delle problematiche che ne seguono. Per questo si è deciso di creare un db, chiamato dbalps, che permettesse di raccogliere la casistica in aumento. L’obbiettivo principale è quello di raccogliere, conservare, mantenere dati fondamentali e renderli utilizzabili.
+Può essere usato come punto di partenza per esperti di più nazioni per condividere dati e avere un quadro completo dei cambiamenti climatici del nostro pianeta.
+Attualmente è il primo database di questo tipo in italia open data che raccoglie questo genere di dati. 
+Quindi queste caratteristiche possono essere consultate oltre che dagli esperti anche dai normali cittadini che ne hanno l’interesse a vedere il cambimaneto delle alpi o a rimanere informati su processi avvenuti in zone di loro interesse.
+ Dbalps quindi è un db che ci permette di raccogliere informazioni sui processi d’instabilità ad alta quota, su alcune stazioni metereologiche dell arco alpino e i dati climatici che queste raccolgono. Il sistema permette di studiare questi processi attraverso l’incrocio dei dati con le stazioni e fare opportune elaborazioni sulle situazioni climatiche presenti durante l’avvenimento in questione e quindi capire se il clima è una possibile causa.
+Abbiamo realizzato anche un interfaccia per una più rapida consultazione dei dati.
+Quindi riassumendo possiamo inserire dati climatici,stazioni,processi, modificarli, elaborarli e visualizzarli.
+
+-->
+                </section>
+                <section>Archittettura MVC
+                    <img src="asset/MVC.png" class="stretch" alt="Image">
+                    <!-- dbalsp è stato realizzato rispettando il pattern mvc che è un design pattern non una libreria o una componente riutilizzabile, è una soluzione progettuale.
+Se guardiamo il normale funzionamento di una pagina web  un client invia una richiesta a una server per una pagina web il server attraverso un applicazione riceve i dati del db li elaborara e restituirsce al client.
+Fare tutto questo insieme risulta un po’ complesso quindi si è diviso in 3 blocchi, 3 fasi logiche.
+
+Model funzionamento che si occupa delle varie operazioni disponibile, di accedere a file o database
+View logica di presentazione , interfaccia
+Controller logica applicativa si occupa di smistare le richieste ai modelli opportuni
+
+La divisione non è solo concettuale ma le 3 fasi sono su file diversi. Questo porta dei vantaggi:
+
+Indipendenza delle componenti, per permettere un lavoro separato su ciascuna fase 
+ Possibilità di scrivere viste e controllori diversi mantenendo lo stesso modello di accesso ai dati, con possibilità di riutilizzo 
+ La separazione del controller rende più facile la progettazione permettendo al programmatore di concentrarsi sul funzionamento 
+ Obbligo dei programmatori di rispettare uno standard, facilitando comprensione e modifiche future 
+-->
+                </section>
                 <section>
                     <h2>Tecnologie utilizzate</h2>
-                    <ul>
-                        <li>Java</li>
-                        <li>PosgreSQL
-                            <=P ostgis</li>
-                                <li>Javascript</li>
-                                <li>CSS</li>
-                    </ul>
-                    <p><small>è una Web Application...</small></p>
+                    <div class="row">
+                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <img src="asset/java-logo-vector.png">
+                        </div>  
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <img src="asset/Postgresql_elephant.svg">
+                        </div>
+                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <img src="asset/postgis_logo1.png">
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <img src="asset/js.jpg">
+                        </div>
+                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <img src="asset/jQurery.gif">
+                        </div>  
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <img src="asset/glassfish_logo.png">
+                        </div>
+                    </div>
+                    
+
+                    
                 </section>
             </section>
             <section>
                 <!--Capitolo 4 Microservices-->
-                <section>API</section>
+                <section>
+                    <img src="asset/api.png" class="stretch" alt="Image">
+                </section>
                 <section>Spegazione </section>
             </section>
             <section>
                 <!--Capitolo 4 NOSQL e GIS-->
-                <section>NOSQL</section>
+                <section>
+                    <img src="asset/nosql.gif" class="stretch" alt="Image">
+                </section>
                 <section>NOSQL e Gis</section>
             </section>
-
             <section>
                 Conclusioni
                 <section>
@@ -106,37 +165,36 @@
             <section>
                 Grazie Per l'attenzione
             </section>
-
         </div>
     </div>
-
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
-
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
-        // More info https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            history: true,
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
 
-            // More info https://github.com/hakimel/reveal.js#dependencies
-            dependencies: [{
-                src: 'plugin/markdown/marked.js'
-            }, {
-                src: 'plugin/markdown/markdown.js'
-            }, {
-                src: 'plugin/notes/notes.js',
-                async: true
-            }, {
-                src: 'plugin/highlight/highlight.js',
-                async: true,
-                callback: function() {
-                    hljs.initHighlightingOnLoad();
-                }
-            }]
-        });
-        Reveal.configure({
-            slideNumber: true
-        });
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: 'plugin/markdown/marked.js'
+        }, {
+            src: 'plugin/markdown/markdown.js'
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }]
+    });
+    Reveal.configure({
+        slideNumber: true
+    });
     </script>
 </body>
 
